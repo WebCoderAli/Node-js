@@ -1,0 +1,2 @@
+Hello from fs module
+This is an appended line.
