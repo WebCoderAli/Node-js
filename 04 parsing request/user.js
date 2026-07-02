@@ -1,7 +1,6 @@
-const http = require('http');
 const fs = require('fs');
 
-const server = http.createServer((req, res) => {
+const requestHandler = ((req, res) => {
     if(req.url === '/') {
         res.setHeader('Content-Type', 'text/html');
         res.write('<html>');
@@ -49,8 +48,5 @@ const server = http.createServer((req, res) => {
         return res.end();
     }
 });
-const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-});
+module.exports = requestHandler;
