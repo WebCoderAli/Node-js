@@ -36,16 +36,21 @@ const requestHandler = ((req, res) => {
             const fullBody = Buffer.concat(body).toString();
             const params = new URLSearchParams(fullBody);
             const bodyObj = Object.fromEntries(params)
-            // for (const [key , val] of params.entries()){
-            //     bodyObj[key] = val
-            
-            fs.writeFileSync('userDetails.txt', JSON.stringify(bodyObj));
+
+            fs.writeFile('userDetails.txt', JSON.stringify(bodyObj), (err) => {
+                if (err) {
+                    console.error('Error writing to file:', err);
+                } else {
+                    console.log('User details saved successfully.');
+                }
+                    res.statusCode = 302;
+                    res.setHeader('Location', '/');
+                    return res.end();
+            });
 
             console.log(bodyObj);
         });
-        res.statusCode = 302;
-        res.setHeader('Location', '/');
-        return res.end();
+
     }
 });
 

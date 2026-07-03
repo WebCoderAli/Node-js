@@ -1,0 +1,1 @@
+{"username":"Ali","email":"hamza@gmail.com","password":"12345","gender":"male"}
