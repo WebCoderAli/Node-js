@@ -43,9 +43,9 @@ const requestHandler = ((req, res) => {
                 } else {
                     console.log('User details saved successfully.');
                 }
-                    res.statusCode = 302;
-                    res.setHeader('Location', '/');
-                    return res.end();
+                res.statusCode = 302;
+                res.setHeader('Location', '/');
+                return res.end();
             });
 
             console.log(bodyObj);
