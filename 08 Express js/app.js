@@ -1,11 +1,8 @@
 const http = require('http');
 
-const server = http.createServer((req, res) => {
-    console.log('Request received:', req.method, req.url);
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello, World!\n');
-});
+const userHandler = require('./user');
+
+const server = http.createServer(userHandler);
 
 const PORT = 3000;
 server.listen(PORT, () => {
