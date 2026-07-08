@@ -1,3 +1,5 @@
+const path = require("path")
+
 const express = require('express');
 
 const app = express();
@@ -13,7 +15,7 @@ app.use(userRouter)
 app.use(hostRouter)
 
 app.use((req, res, next) =>{
-    res.status(200).send(`<h1>404 page is not found</h1>`)
+    res.status(200).sendFile(path.join(__dirname , "views" , "404.html"))
 })
 
 const port = process.env.PORT || 3000;
