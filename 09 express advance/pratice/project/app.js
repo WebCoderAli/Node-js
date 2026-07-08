@@ -8,6 +8,8 @@ const hostRouter = require("./routes/hostRouter")
 
 const userRouter = require("./routes/userRouter")
 
+const rootDir = require("./utils/pathUtil")
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use(userRouter)
@@ -15,7 +17,7 @@ app.use(userRouter)
 app.use(hostRouter)
 
 app.use((req, res, next) =>{
-    res.status(200).sendFile(path.join(__dirname , "views" , "404.html"))
+    res.status(200).sendFile(path.join(rootDir , "views" , "404.html"))
 })
 
 const port = process.env.PORT || 3000;
