@@ -1,0 +1,35 @@
+<%- include('partials/head', { pageTitle: 'Add Property' }) %>
+
+    <div class="container">
+        <%- include('partials/nav') %>
+
+        <header>
+            <h1>Add Your House</h1>
+            <p>Fill in the details below to list your property.</p>
+        </header>
+
+        <main>
+            <form action="/contact-us" method="POST">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter House Name"
+                    required
+                >
+
+                <button type="submit">
+                    Submit Property
+                </button>
+
+            </form>
+
+            <a href="/" class="back-btn">
+                ← Back to Home
+            </a>
+
+        </main>
+
+    </div>
+
+<%- include('partials/footer') %>

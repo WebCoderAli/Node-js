@@ -4,10 +4,11 @@ const express = require('express');
 
 const userRouter = express.Router();
 
-const rootDir = require("../utils/pathUtil")
+const rootDir = require("../utils/pathUtil");
+const { registerHouse } = require("./hostRouter");
 
 userRouter.get('/', (req, res, next) => {
-    res.sendFile(path.join(rootDir , "views" ,"home.html"));
+    res.render("home" , {registerHouse : registerHouse});
 });
 
 module.exports = userRouter;

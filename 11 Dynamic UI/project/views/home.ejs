@@ -1,0 +1,41 @@
+<%- include('partials/head', { pageTitle: 'Home' }) %>
+    
+    <div class="container">
+        <%- include('partials/nav') %>
+
+        <header>
+            <h1 class="text-5xl bg-red-600">Welcome to Home Rental</h1>
+        </header>
+
+        <main>
+            <p>
+                Find your perfect rental home or list your property with ease.
+                Start by adding your property and connect with potential tenants.
+            </p>
+
+            <a href="/contact-us" class="btn">
+                Add a Property
+            </a>
+        </main>
+
+        <section class="mt-12 mb-8">
+            <h2 class="text-4xl font-bold mb-6 text-gray-800">Recently Added Homes</h2>
+            <% if (registerHouse.length > 0) { %>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% registerHouse.forEach((house, index) => { %>
+                        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+                            <img src="https://via.placeholder.com/300x200" alt="<%= house %>" class="w-full h-48 object-cover rounded mb-4">
+                            <h3 class="text-xl font-semibold mb-2"><%= house %></h3>
+                            <p class="text-gray-600 mb-4">Recently added property</p>
+                            <p class="text-blue-600 font-bold">Contact for pricing</p>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <p class="text-gray-600 text-lg">No homes added yet. Start by adding your first property!</p>
+            <% } %>
+        </section>
+
+    </div>
+    
+<%- include('partials/footer') %>
