@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="nav-link <%= activePage === 'home' ? 'active' : '' %>" href="/">Home</a>
+            <a class="nav-link <%= activePage === 'about' ? 'active' : '' %>" href="/about">About</a>
+            <a class="nav-link" href="/registeryourhome">Register Your Home</a>
+            <a class="nav-link <%= activePage === 'user' ? 'active' : '' %>" href="/user">User</a>
+            <a class="nav-link <%= activePage === 'host' ? 'active' : '' %>" href="/host">Host</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <section class="form-card">
+            <h1>Register Your Home</h1>
+            <p>Submit your property details and join our listing platform.</p>
+            <form action="/registeryourhome" method="post">
+                <label for="name">Owner name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="address">Property address</label>
+                <input type="text" id="address" name="address" placeholder="Street, city, state" required>
+
+                <label for="price">Suggested price</label>
+                <input type="text" id="price" name="price" placeholder="$ per month" required>
+
+                <label for="description">Property description</label>
+                <textarea id="description" name="description" rows="5" placeholder="Describe your home"></textarea>
+
+                <button type="submit">Submit Registration</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <%= new Date().getFullYear() %> Home Listings. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

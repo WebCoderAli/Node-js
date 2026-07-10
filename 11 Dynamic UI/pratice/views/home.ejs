@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="nav-link <%= activePage === 'home' ? 'active' : '' %>" href="/">Home</a>
+            <a class="nav-link <%= activePage === 'about' ? 'active' : '' %>" href="/about">About</a>
+            <a class="nav-link" href="/registeryourhome">Register Your Home</a>
+            <a class="nav-link <%= activePage === 'user' ? 'active' : '' %>" href="/user">User</a>
+            <a class="nav-link <%= activePage === 'host' ? 'active' : '' %>" href="/host">Host</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <section class="hero">
+            <h1>Home Listings Dashboard</h1>
+            <p>This app only displays homes registered by hosts.</p>
+        </section>
+
+        <section class="page-content">
+            <p>Currently <strong><%= homeCount %></strong> home(s) registered.</p>
+            <p><a class="back-link" href="/host/register">Register a home</a> or <a class="back-link" href="/user">View registered homes</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <%= new Date().getFullYear() %> Home Listings. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

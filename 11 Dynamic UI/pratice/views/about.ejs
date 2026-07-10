@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="nav-link <%= activePage === 'home' ? 'active' : '' %>" href="/">Home</a>
+            <a class="nav-link <%= activePage === 'about' ? 'active' : '' %>" href="/about">About</a>
+            <a class="nav-link" href="/registeryourhome">Register Your Home</a>
+            <a class="nav-link <%= activePage === 'user' ? 'active' : '' %>" href="/user">User</a>
+            <a class="nav-link <%= activePage === 'host' ? 'active' : '' %>" href="/host">Host</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <section class="page-content">
+            <h1>About Our Property Listings</h1>
+            <p>We connect homeowners and renters with a simple, fast listing experience.</p>
+            <ul>
+                <li>Curated property listings for modern living.</li>
+                <li>Easy home registration with a single form.</li>
+                <li>Responsive support for owner and renter inquiries.</li>
+            </ul>
+            <p>Whether you want to list a house or find your next rental, our pages make it easy to explore and register properties.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <%= new Date().getFullYear() %> Home Listings. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

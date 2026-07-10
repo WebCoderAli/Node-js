@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="nav-link <%= activePage === 'home' ? 'active' : '' %>" href="/">Home</a>
+            <a class="nav-link <%= activePage === 'about' ? 'active' : '' %>" href="/about">About</a>
+            <a class="nav-link" href="/registeryourhome">Register Your Home</a>
+            <a class="nav-link <%= activePage === 'user' ? 'active' : '' %>" href="/user">User</a>
+            <a class="nav-link <%= activePage === 'host' ? 'active' : '' %>" href="/host">Host</a>
+        </nav>
+    </header>
+
+    <main class="page-main">
+        <section class="page-content">
+            <h1>Host Listings</h1>
+            <% if (houses.length === 0) { %>
+                <p>No homes registered yet. <a href="/host/register">Register your first home</a>.</p>
+            <% } else { %>
+                <ul class="host-listings">
+                    <% houses.forEach((house) => { %>
+                        <li>
+                            <h2><%= house.address %></h2>
+                            <p><strong>Owner:</strong> <%= house.name %></p>
+                            <p><strong>Price:</strong> <%= house.price %></p>
+                            <p><%= house.description %></p>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <%= new Date().getFullYear() %> Home Listings. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

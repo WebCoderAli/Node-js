@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f5f9;
+    color: #222;
+}
+
+header {
+    background-color: #1d2939;
+    color: #fff;
+    padding: 18px 24px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #334155;
+    border-radius: 6px;
+}
+
+.page-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px 48px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.hero h1 {
+    margin: 0 0 12px;
+    font-size: 2.4rem;
+    color: #102a43;
+}
+
+.hero p {
+    margin: 0;
+    color: #475569;
+    font-size: 1rem;
+}
+
+.house-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.house-card,
+.form-card,
+.page-content {
+    background: #fff;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.house-card h2,
+.form-card h1,
+.page-content h1 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.house-location {
+    margin: 0 0 12px;
+    color: #475569;
+}
+
+.house-price {
+    margin: 0 0 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1d4ed8;
+}
+
+.house-card p {
+    margin: 0 0 10px;
+    line-height: 1.6;
+}
+
+.form-card form {
+    display: grid;
+    gap: 16px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    color: #334155;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    font-size: 1rem;
+    color: #0f172a;
+}
+
+button {
+    width: fit-content;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 22px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.page-content ul {
+    padding-left: 1.2rem;
+    color: #334155;
+}
+
+.page-content ul li {
+    margin-bottom: 10px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
